@@ -7,7 +7,7 @@
   <insert id="add">
  insert into tbl_board (title, content, writer) 
  values(#{title},#{content}, #{writer})
- </insert>
+ </insert> 
 
  <select id="read" resultType="com.gms.web.mapper.BoardMapper">
  select 
