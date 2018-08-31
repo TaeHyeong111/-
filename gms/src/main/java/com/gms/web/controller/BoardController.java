@@ -54,6 +54,17 @@ public class BoardController {
 	public String logout() {
 		return "redirect:/";
 	}
+	@RequestMapping(value="/register")
+	public String register() {
+		System.out.println("레지스터들어옴");
+		return "register__success";
+	}
+	@RequestMapping("/read")
+	public String read(){
+		return "read__success";
+	}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}
 }
+
+

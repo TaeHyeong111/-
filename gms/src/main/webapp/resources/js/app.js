@@ -5,7 +5,7 @@ app = {
 		init : x=>{
 			app.session.ctx(x)
 			app.onCreate();
-		},
+		}
 		/*onCreate : ()=>{
 			console.log('step3')
 			app.setContentView()
@@ -64,12 +64,6 @@ app.session = {
 		},
 		path : x =>{
 			return sessionStorage.getItem(x);
-		},
-		click : x =>{
-			sessionStorage.setItem('click', x)
-		},
-		path : x =>{
-			return sessionStorage.getItem(x);
 		}
 		
 }
@@ -84,9 +78,6 @@ app.c = ()=>{
 }
 app.i = ()=>{
 	return app.session.path('img')
-}
-app.click = ()=>{
-	return app.session.path('click')
 }
 
 /*user.session = x=>{

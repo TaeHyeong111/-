@@ -1,5 +1,7 @@
 package com.gms.web.controller;
 
+import javax.websocket.Session;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,8 +35,11 @@ public class MemberController {
 	public void retrieve() {}
 	@RequestMapping("/count")
 	public void count() {}
-	@RequestMapping("/modyfy")
-	public void modify() {}
+	@RequestMapping(value="/modify")
+	public String modify(@ModelAttribute("user") MemberDTO member) {
+		memberService.modify(member);
+		return "modify__success";
+	}
 	@RequestMapping("/remove")
 	public void remove() {}
 	@RequestMapping(value="/login", method=RequestMethod.POST)
@@ -45,6 +50,7 @@ public class MemberController {
 		if(m==true) {
 			result="login__success";
 			model.addAttribute("user", memberService.retrieve(member));
+			
 		}else {
 			result="redirect:/";
 		}

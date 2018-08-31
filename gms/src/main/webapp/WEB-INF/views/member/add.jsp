@@ -8,8 +8,6 @@
 		User ID : <input type="text" name="userid" required/> <br>
 		 Password : <input	type="text" name="password" required/><br>
 		 SSN : <input type="text" name="ssn" required/>
-		 <input id="joinFormBtn" type="button" value="제출" />  
-		  
 
 		  <br>소속팀
 		  <input type="radio" name="teamid"  value="none" checked="checked"/> 없음
@@ -38,27 +36,15 @@
 		  <input type="checkbox" name="subject" value="html"/> HTML
 		  <input type="checkbox" name="subject" value="spring"/> Spring
 	</form>
-
+	<input id="joinFormBtn" type="button" value="제출" /> 
+<script>
+$('#joinFormBtn').click(function(){
+	$('#joinForm').attr({
+		action:'${ctx}/member/add',
+		method:"POST"
+	})
+	.submit()
+})
+</script>
 </body>
 </html>
-
-
-<!--  var node1 = document.createElement('input');
-						node1.innerHTML = 
-						'<input type="hidden" name="age"/>';
-						form.appendChild(node1);
-						
-						var node2 = document.createElement('input');
-						node2.innerHTML =
-						'<input type="hidden" name="gender"/>';
-						form.appendChild(node2);
-						
-						var node3 = document.createElement('input');
-						node3.innerHTML = 
-						'<input type="hidden" name="action" value="login"/>';
-						form.appendChild(node3);
-						
-						var node4 = document.createElement('input');
-						node4.innerHTML =
-						'<input type="hidden" name="page" value="mypage"/>';
-						form.appendChile(node4);  -->

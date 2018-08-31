@@ -17,7 +17,6 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#signup">빈공간</a>
             </li>
-            <li><a id="board__write">게시글작성</a></li>
             <li><a id="board__list">게시글보기</a> </li>
           </ul>
         </div>
@@ -30,10 +29,7 @@
 	$('#join_btn').click(function(){
 		location.href = '${ctx}/move/public/member/add'
 	})
-	$('#board__write').click(function(){
-		alert("보드라이트 클릭")
-	})
 	$('#board__list').click(function(){
-		alert("보드리스트 클릭")
+		location.href='${ctx}/board/read'
 	})
     </script>

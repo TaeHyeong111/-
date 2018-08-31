@@ -11,7 +11,7 @@
         <put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
         <put-attribute name="navigation" value="/WEB-INF/views/common/navigation.jsp"/>
         <put-attribute name="projects" value="/WEB-INF/views/common/projects.jsp"/>
-        <put-attribute name="retrieve" value=""/>
+        
         
         
         
@@ -22,18 +22,8 @@
     </definition>
     
      <definition name="auth:*/*.tiles" extends="public">
-    <put-attribute name="navigation" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
-    </definition>
-    
-     <definition name="login__success" extends="public">
+    <put-attribute name="contact" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
     <put-attribute name="navigation" value="/WEB-INF/views/member/navigation.jsp"></put-attribute>
-    <put-attribute name="retrieve" value="/WEB-INF/views/member/retrieve.jsp"/>
     </definition>
-    
-    <definition name="add__success" extends="public">
-    <put-attribute name="retrieve" value="/WEB-INF/views/member/login.jsp"/>
-    </definition>
-    
-   
     
 </tiles-definitions>

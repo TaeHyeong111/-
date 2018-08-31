@@ -44,6 +44,18 @@
     <div id="retrieve">
         <tiles:insertAttribute name="retrieve"/>
     </div>
+    <div id="register">
+        <tiles:insertAttribute name="register"/>
+    </div>
+    <div id="read">
+        <tiles:insertAttribute name="read"/>
+    </div>
+    <div id="retrieve">
+        <tiles:insertAttribute name="retrieve"/>
+    </div>
+    <div id="modify">
+        <tiles:insertAttribute name="modify"/>
+    </div>
     
 </div>
 

@@ -18,17 +18,21 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#signup">게시글쓰기</a>
             </li>
+            <li><a id="board__write">게시글작성</a></li>
+            
+            <li><a id="board__list">게시글보기</a> </li>
           </ul>
         </div>
       </div>
     </nav>
-     <%-- user.session({
-    	userid : '${user.userid}',
-    	name : '${user.name}',
-    	gender : '${user.gender}',
-    	age : '${user.age}',
-    	roll : '${user.roll}',
-    	teamid : '${user.teamid}',
-    	email : '${user.email}',
-    	phone : '${user.phone}'
-    });  --%>
+     <script>
+     $('#logout_btn').click(function(){
+    	 location.href = "${ctx}/member/logout"
+     })
+     $('#board__write').click(function(){
+		location.href="${ctx}/board/register"
+	})
+	$('#board__list').click(function(){
+		alert("보드리스트 클릭")
+	})
+     </script>

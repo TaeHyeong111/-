@@ -11,7 +11,7 @@
                     <tr>
                         <td rowspan="3" colspan="2"></td>
                         <td>ID</td>
-                        <td>${user.userId}</td>
+                        <td>${user.userid}</td>
                     </tr>
                     <tr>
                         <td>이름</td>
@@ -59,10 +59,12 @@
     </div>
 
     <script>
+    
+    
         var form = document.getElementById("updateForm");
         var team = document.getElementById("teamid");
         for (var i = 0; i < team.options.length; i++) {
-            if (team.options[i].value === '${user.teamId}') {
+            if (team.options[i].value === '${user.teamid}') {
                 team.options[i].setAttribute("selected", "selected");
             }
         }
@@ -73,25 +75,13 @@
                 document.getElementById('roll_' + i).checked = true;
             }
         }
-
-        document.getElementById("updateConfirmBtn").addEventListener(
-                'click',
-                function() {
-                    var x = service.nullChecker([
-                            document.updateForm.password.value,
-                            document.updateForm.teamid.value,
-                            document.updateForm.roll.value ]);
-                    if (x.checker) {
-                        form.action = "${ctx}/member.do";
-                        form.method = "post"; /* get으로 하면 노출됨 */
-                        var node = document.createElement('input');
-                        node.innerHTML = '<input type="hidden" name="action" value="modify">'
-                        form.appendChild(node);
-                        form.submit();
-                    } else {
-                        alert(x.text);
-                    }
-                });
+        
+        $('#updateConfirmBtn').click(function(){
+        	$('#updateForm').attr({
+        		action:'${ctx}/member/modify',
+        	})
+        })
+        
     </script>
 </body>
 </html>

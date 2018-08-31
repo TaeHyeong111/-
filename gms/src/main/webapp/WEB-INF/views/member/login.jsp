@@ -12,9 +12,14 @@
 	</form>
 
 	 <script>
-	 $('#loginFormBtn').click(function(){
-		 if(){}
-		})
+	 
+		$('#loginFormBtn').click(function(){
+				$('#userLoginForm').attr({
+					action:"${ctx}/member/login",
+					method:"POST"
+				})
+				.submit();
+			})
     </script> 
 </body>
 </html>

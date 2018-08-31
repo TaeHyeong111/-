@@ -38,7 +38,12 @@
          <a id="myPageMoveToDelete"> DELETE FORM </a> 
     </div>
     </div></div>
-    <!-- <script> 하다말앗음!!!!!!!!!
-    location.href = '{ctx}/move/public/member/modify'
-    </script> -->
+    <script>
+    $('#myPageMoveToUpdate').click(function(){
+    	location.href = "${ctx}/move/auth/member/modify"
+    })
+    $('#myPageMoveToDelete').click(function(){
+    	location.href = "${ctx}/member/remove"
+    })
+    </script>
 </body></html>
